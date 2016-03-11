@@ -6,7 +6,7 @@ var morgan = require('morgan');
 var logger = morgan('dev');
 var bodyParser = require('body-parser');
 var app = express();
-
+var routes = require('./routes');
 
 app.use(express.static('./public'));
 app.set('views','./views');
@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.use(logger);
 
 
+app.use('/', routes);
 
 app.get('/',function(req,res){
 	res.send("Hello");

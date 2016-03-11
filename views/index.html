@@ -1,0 +1,24 @@
+<DOCTYPE html>
+<html lang="en"
+	<head>
+		<title>Trip Planner Static</title>
+	</head>
+	<body>
+	<div> Restaurants: 
+		{% for restaurant in restaurants %}
+		<li>{{restaurant.name}}</li>
+		{% endfor %}
+	</div>
+	<div> Activities: 
+		{% for activity in activities %}
+		<li>{{activity.name}}</li>
+		{% endfor %}
+	</div>
+	<div> Hotels: 
+		{% for hotel in hotels %}
+		<li>Hotel Name: {{hotel.name}}</li>
+			<ul>Address: {{hotel.place.address}}</ul>
+		{% endfor %}
+	</div>
+	</body>
+</html>
