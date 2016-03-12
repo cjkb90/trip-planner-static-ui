@@ -5,8 +5,13 @@ var mongoose = require('mongoose');
 var morgan = require('morgan');
 var logger = morgan('dev');
 var bodyParser = require('body-parser');
-var app = express();
+var app = express();	
 var routes = require('./routes');
+
+
+app.use('/css',express.static(__dirname+'/css'));
+app.use('/js',express.static(__dirname+'/js'));
+app.use(express.static(__dirname+'/node_modules'));
 
 app.use(express.static('./public'));
 app.set('views','./views');
@@ -17,6 +22,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.use(logger);
+
+
 
 
 app.use('/', routes);

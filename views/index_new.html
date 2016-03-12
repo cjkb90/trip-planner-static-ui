@@ -1,0 +1,144 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNMdawo_6we9NA3BXWBN1DR8vVp_NvMrk"></script>
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+-->
+<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+<!-- Optional theme -->
+<title>TRIPPY</title>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-map-marker" style="margin-right:5px"></span>TRIPPY</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid" style="padding:0px;margin:0px">
+  <div  id="map-canvas" style="height:100%">
+  </div>
+  <div class="control-panel">
+
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-12" style="padding-left:0px;">
+                <label class="pickmenus"> Sleep
+                  <span class="input-group">
+                      <select class="form-control">
+                        <option></option>
+                        <!-- for loop of hotels -->
+                           {% for hotel in hotels %}                    
+                        <option>{{hotel.name}}</option>
+                      {% endfor %}
+                      </select><span class="input-group-addon"><span style="width:20px"class="glyphicon glyphicon-plus-sign"></span>
+                </span>
+              </label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12" style="padding-left:0px">
+                <label class="pickmenus"> Eat
+                  <span class="input-group">
+                      <select class="form-control">
+                        <option></option>
+                        <!-- for loop of hotels -->
+                        {% for restaurant in restaurants %}
+                        <option >{{restaurant.name}}</option>
+                            {% endfor %}
+
+                      </select><span class="input-group-addon"><span style="width:20px"class="glyphicon glyphicon-plus-sign"></span>
+                </span>
+              </label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12" style="padding-left:0px">
+                <label class="pickmenus"> Do
+                  <span class="input-group">
+                      <select class="form-control">
+                        <option></option>
+                          {% for activity in activities %}                          
+                        <option>{{activity.name}}</option>
+                      {% endfor %}
+                      </select><span class="input-group-addon"><span style="width:20px"class="glyphicon glyphicon-plus-sign"></span>
+                </span>
+              </label>
+          </div>
+      </div>
+
+ 
+
+
+  <div class="row">
+      <div class="col-sm-12" style="padding-left:0px;margin-top:30px">
+        <div class="panel panel-default" style="    margin-right: 15px;">
+          <div class="panel-heading">
+          
+          <span class="badge daybadge" style="height: 24px;" >Days
+              <!--for loop of days-->
+              <span class="badge daybadge-active" >1</span>
+              <span class="badge daybadge" >2</span>
+
+          </span>
+
+          </div>
+          <div class="panel-body">
+            I'm Staying at
+                <div class="panel-body">
+                  <!-- for loop over hotels-->
+                  hotels <span class="glyphicon glyphicon-remove-sign"></span>
+
+                </div>
+          </div>
+          <div class="panel-body">
+            I'm eating at
+             <div class="panel-body">
+                  <!-- for loop over restaurants-->
+                  restaurants <span class="glyphicon glyphicon-remove-sign"></span>
+                </div>
+          </div>
+          <div class="panel-body">
+            I'm Doing
+            <div class="panel-body">
+                  <!-- for loop over activities-->
+                  activities <span class="glyphicon glyphicon-remove-sign"></span>
+                </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="/js/map.js"></script>
+</head>
+
+

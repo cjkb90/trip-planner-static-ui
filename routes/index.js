@@ -32,7 +32,7 @@ var hotAll = Hotel.find({})
 router.get('/',function(req,res,next){
 	Promise.all([restAll,actAll, hotAll])
 	.then(function(){
-		res.render('index', {restaurants: restList, activities: actList, hotels:hotList});	
+		res.render('index_new', {restaurants: restList, activities: actList, hotels:hotList});	
 	})
 	.catch(function(err){
 		console.log(err);

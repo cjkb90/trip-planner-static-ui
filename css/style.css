@@ -1,0 +1,43 @@
+.control-panel{
+	background-color: #000;
+	//opacity: .7;
+    max-height: 80%;
+    min-height: 80%;
+    overflow-y:scroll; 
+    //width: 400px;
+    position:fixed;
+    top: 150px;
+    right:10px;
+    z-index:999;
+    border-radius:3px;
+    padding:15px;
+    color:#ccc;
+}
+nav.navbar{
+	margin-bottom: 0px;
+}
+label.pickmenus {
+	width:370px;
+margin-top:10px;
+}
+.daybadge{
+	height: 19px;
+
+}
+.daybadge-active{
+	height: 19px;
+	background-color: #fff;
+	
+}
+.panel-default>.panel-heading .daybadge-active{
+	height: 19px;
+	background-color: #fff;
+	color:green;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
